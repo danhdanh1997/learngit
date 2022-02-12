@@ -7,5 +7,6 @@ public class demo {
 
     public void setAge(int age){
         age = 25;
+        System.out.println("hello xuan thach nha a hihi");
     }
 }
