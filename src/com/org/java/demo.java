@@ -1,23 +1,32 @@
 package com.org.java;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
+import java.time.Instant;
+import java.time.LocalDateTime;
+import java.time.ZoneOffset;
 
 public class demo {
     public static void main(String[] args) {
         System.out.println("hello xuan danh");
 
-        String path = "c:\\projects\\app.log";
+//        String path = "c:\\projects\\app.log";
+//
+//        try {
+//
+//            // default StandardCharsets.UTF_8
+//            String content = Files.readString(Paths.get(path));
+//            System.out.println(content);
+//
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
 
-        try {
+        Instant instant = Instant.now();
 
-            // default StandardCharsets.UTF_8
-            String content = Files.readString(Paths.get(path));
-            System.out.println(content);
+        System.out.println("Instant : " + instant);
 
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        //Convert instant to LocalDateTime, no timezone, add a zero offset / UTC+0
+        LocalDateTime ldt = LocalDateTime.ofInstant(instant, ZoneOffset.UTC);
+
+        System.out.println("LocalDateTime : " + ldt);
     }
 
     public void setAge(int age){
